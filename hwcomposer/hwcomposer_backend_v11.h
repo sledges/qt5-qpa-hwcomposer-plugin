@@ -48,6 +48,7 @@
 
 // libhybris access to the native hwcomposer window
 #include <hwcomposer_window.h>
+#include <sync/sync.h>
 
 class HwComposerBackend_v11 : public HwComposerBackend {
 public:

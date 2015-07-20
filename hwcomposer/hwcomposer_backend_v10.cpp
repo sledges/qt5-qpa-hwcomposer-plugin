@@ -40,7 +40,7 @@
 ****************************************************************************/
 
 #include "hwcomposer_backend_v10.h"
-
+#include <sync/sync.h>
 #ifdef HWC_DEVICE_API_VERSION_1_0
 
 /* For vsync thread synchronization */

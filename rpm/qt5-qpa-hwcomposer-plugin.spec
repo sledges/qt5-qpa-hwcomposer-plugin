@@ -38,6 +38,7 @@ hwcomposer for composing content onto the screen.
 export QTDIR=/usr/share/qt5
 cd hwcomposer
 %qmake5
+make clean
 make %{_smp_mflags}
 
 %install
