@@ -165,7 +165,7 @@ HwComposerBackend_v11::createWindow(int width, int height)
     layer->handle = 0;
     layer->transform = 0;
     layer->blending = HWC_BLENDING_NONE;
-#ifdef HWC_DEVICE_API_VERSION_1_3
+#if defined(HWC_DEVICE_API_VERSION_1_3) || defined(HWC_DEVICE_API_VERSION_1_4)
     layer->sourceCropf.top = 0.0f;
     layer->sourceCropf.left = 0.0f;
     layer->sourceCropf.bottom = (float) height;
@@ -190,7 +190,7 @@ HwComposerBackend_v11::createWindow(int width, int height)
     layer->handle = 0;
     layer->transform = 0;
     layer->blending = HWC_BLENDING_NONE;
-#ifdef HWC_DEVICE_API_VERSION_1_3
+#if defined(HWC_DEVICE_API_VERSION_1_3) || defined(HWC_DEVICE_API_VERSION_1_4)
     layer->sourceCropf.top = 0.0f;
     layer->sourceCropf.left = 0.0f;
     layer->sourceCropf.bottom = (float) height;
