@@ -238,9 +238,17 @@ void
 HwComposerBackend_v11::sleepDisplay(bool sleep)
 {
     if (sleep) {
+#ifdef HWC_DEVICE_API_VERSION_1_4
+        HWC_PLUGIN_EXPECT_ZERO(hwc_device->setPowerMode(hwc_device, 0, HWC_POWER_MODE_OFF));
+#else
         HWC_PLUGIN_EXPECT_ZERO(hwc_device->blank(hwc_device, 0, 1));
+#endif
     } else {
+#ifdef HWC_DEVICE_API_VERSION_1_4
+        HWC_PLUGIN_EXPECT_ZERO(hwc_device->setPowerMode(hwc_device, 0, HWC_POWER_MODE_NORMAL));
+#else
         HWC_PLUGIN_EXPECT_ZERO(hwc_device->blank(hwc_device, 0, 0));
+#endif
 
         if (hwc_list) {
             hwc_list->flags |= HWC_GEOMETRY_CHANGED;
