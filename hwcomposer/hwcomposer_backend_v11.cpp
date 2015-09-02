@@ -151,8 +151,9 @@ HwComposerBackend_v11::createWindow(int width, int height)
     const hwc_rect_t r = { 0, 0, width, height };
 
     for (int i = 0; i < num_displays; i++) {
-         hwc_mList[i] = hwc_list;
+         hwc_mList[i] = NULL;
     }
+    hwc_mList[0] = hwc_list;
 
     hwc_layer_1_t *layer = NULL;
 
